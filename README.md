@@ -1,34 +1,60 @@
-# Electronic journal - Technical documentation
+# 📚 Электронный журнал - Техничекая документация
 
-![Electronic Journal](./electronic_journal.png)
+<p align="center">
+  <img src="./electronic_journal.png" alt="Electronic Journal" width="250" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);" />
+</p>
 
-> *“An electronic school journal is a tool that unites teachers, students and parents, making the learning process transparent and convenient.”*
+> _“Электронный журнал для школы — инструмент, объединяющий учителей, учеников и родителей, делающий процесс обучения прозрачным и удобным.”_
 
-Welcome to the technical documentation for the mobile application "Electronic journal for school"! This project was created to simplify the interaction between students, teachers and parents. With the help of the application you will be able to keep a schedule of classes, track the progress and attendance of students and much more.
+## Описание проекта
 
-## Contents of the documentation
+Добро пожаловать в техническую документацию мобильного приложения **«Электронный журнал для школы»**.  
+Приложение автоматизирует школьную систему ведения журналов и предоставляет доступ к:
 
-- **[Architecture](./Architecture/README.md)** — application architecture, state management and code organization.
-- **[Application description](./ApplicationDescription/README.md)** — application notes
-- **[UI](./UI/README.md)** — general user interface details.
-- **[UI-Admin](./UI/AdminScreen/README.md)** — UI details for the application administrator
-- **[UI-Pupil](./UI/PupilScreen/README.md)** — UI details for pupil
-- **[UI-Teacher](./UI/TeacherScreen/README.md)** — UI details for teacher
-- **[UI-Parent](./UI/ParentScreen/README.md)** — UI details for parent
-- **[Assets](./Assets/README.md)** — asset management, including icons.
+- 📝 Оценкам
+- 📆 Расписанию
+- 📚 Домашним заданиям
+- 🚸 Посещаемости
 
-## Further addition of functionality
-*Planned improvements:*
-- ~~Creating Users by Administrator~~
-- ~~Authorization and authentication~~
-- ~~Creation of academic years, quarters, classes, subjects, lessons~~
-- ~~Assigning a class teacher to a class~~
-- Conducting a lesson by a teacher
-- Teacher's grading of subjects
-- Viewing student progress by parents
-- ...
+Целевые пользователи: **ученики**, **учителя**, **родители** и **администраторы**.
 
-## Project Repository
+##  Содержание документации
 
-The full project code is available on GitHub:
+- 🔧 **[Архитектура](./Architecture/README.md)** — архитектура приложений, управление состоянием и организация кода.
+- 🧭 **[Описание приложения](./ApplicationDescription/README.md)** — примечания по применению
+- 🎨 **[UI](./UI/README.md)** — сведения о пользовательском интерфейсе
+- 👤 **[UI администратора](./UI/AdminScreen/README.md)** — детали пользовательского интерфейса для администратора приложения
+-  🎓 **[UI ученика](./UI/PupilScreen/README.md)** — детали пользовательского интерфейса для ученика
+-  👩‍🏫  **[UI учителя](./UI/TeacherScreen/README.md)** — детали пользовательского интерфейса для учителя
+-  👨‍👧 **[UI родителя](./UI/ParentScreen/README.md)** — детали пользовательского интерфейса для родителя
+
+## Функциональные требования проекта
+
+-  🔐 Авторизация и аутентификация пользователей
+-  🔄 Смена пароля администратором
+-  Управление кабинетами, учебными годами, четвертями, предметами
+-  👥 Управление пользователями
+-  💬 Чат для общения родителя с учителями
+-   Выставление оценок и посещаемости ученикам
+-  🗓️Управление уроками, расписаниями уроков и звонков, школьными классами
+-  🧾 Управление темами уроков
+- Назначение классу классного руководителя
+-  👀 Просмотр успеваемости учеников
+-  📝 Управление домашними заданиями, проведение урока учителем
+
+## Нефункциональные требования проекта
+
+- Java
+- Spring
+- Hibernate
+- PostgreSQL
+- Liquibase
+- React Native
+- TypeScript
+- REST Assured
+- JUnit
+
+## Репозиторий проекта
+
+Полный код проекта доступен на GitHub:
 [https://github.com/anna2003674/electronic-journal-documentation](https://github.com/anna2003674/electronic-journal-documentation)

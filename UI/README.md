@@ -1,35 +1,58 @@
 **[← Back](./README.md)**
 
-## UI Electronic Journal 
-The user interface (UI) of the "BARS Electronic Journal" system is designed to provide convenient and intuitive access to important data for both students and teachers and parents. The interface was developed taking into account the needs of various users, including teachers, students and parents, as well as the school administration.
+# UI — Электронный журнал
 
-## Home screen
-The main screen is a panel that displays key functions and relevant information:
-- **For teachers: class schedule, current assignments, list of students.**
-- **For parents: summary of their child's academic performance, schedule, attendance information.**
-- **For students: class schedule, current homework, grades.**
+Пользовательский интерфейс приложения «Электронный журнал» разработан для удобного и интуитивно понятного доступа к важной информации. Он учитывает потребности различных пользователей: **учителей**, **учеников**, **родителей** и **администрации школы**.
 
-## Navigation menu
-The navigation menu, located on the sidebar or at the top of the screen, provides access to the main sections:
-- **Schedule — display of current classes with the ability to filter by days.**
-- **Grades — summary of the student's grades in all subjects.**
-- **Assignments — list of homework assignments and their statuses.**
-- **Progress — dynamic display of academic performance.**
+---
 
-## Teacher screen
-The teacher has access to tools for conducting lessons, as well as for grading:
-- **Creating lessons and classes — the ability to add a new class to the schedule.**
-- **Grades — assigning and changing grades for lessons.**
-- **Statistics — analytics on class performance.**
+## 🏠 Главный экран
 
-## Pupil Screen
-The student sees their personal information, schedule, and grades:
-- **Homework — access to the list of assignments with the ability to track deadlines.**
-- **Grades and Progress — the ability to see your current grades and comments.**
-- **Personal Schedule — displaying lessons for the day with time and subject.**
+Основная панель отображает ключевые функции и актуальную информацию:
 
-## Parent Screen
-A parent can track their child's progress and attendance:
-- **Grades - access to exam results and subject grades.**
-- **Progress - dynamic display of the child's progress in real time.**
-- **ommunication with teachers - the ability to send messages to teachers regarding progress.**
+- 👨‍🏫 **Для учителей**: расписание занятий, текущие задания, список учеников.
+- 👨‍👩‍👧 **Для родителей**: успеваемость ребёнка, расписание, посещаемость.
+- 👩‍🎓 **Для учеников**: расписание, домашние задания, оценки.
+
+---
+
+## 📑 Навигационное меню
+
+Меню навигации (в боковой панели или вверху экрана) обеспечивает переход к основным разделам:
+
+- 📅 **Расписание** — отображение текущих занятий с фильтрацией по дням.
+- 📝 **Оценки** — сводная таблица оценок по всем предметам.
+- 📚 **Задания** — список домашних заданий и их статусы.
+- 📈 **Успеваемость** — динамическое отображение академических результатов.
+
+---
+
+## 👨‍🏫 Экран учителя
+
+Учителя имеют доступ к инструментам для проведения занятий и выставления оценок:
+
+- ➕ **Создание уроков и классов** — добавление новых занятий в расписание.
+- ✅ **Оценки** — выставление и редактирование оценок.
+- 📊 **Статистика** — аналитика по успеваемости класса.
+
+---
+
+## 👩‍🎓 Экран ученика
+
+Ученику доступны персональные данные, расписание и оценки:
+
+- 🏠 **Домашние задания** — список заданий с дедлайнами.
+- 🎯 **Оценки и прогресс** — текущие оценки и комментарии преподавателей.
+- ⏰ **Личное расписание** — занятия на день с указанием времени и предметов.
+
+---
+
+## 👪 Экран родителя
+
+Родители могут отслеживать успеваемость и посещаемость ребёнка:
+
+- 🧾 **Оценки** — доступ к экзаменационным и текущим оценкам.
+- 📉 **Прогресс** — динамическое отображение академических результатов.
+- 💬 **Связь с преподавателями** — возможность обмена сообщениями о ходе обучения.
+
+---

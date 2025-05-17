@@ -1,144 +1,136 @@
 **[← Back](./README.md)**
-# Documentation for the БАРС Electronic Journal System
+# Документация для электронного журнала для школы
 
-## Description
-The БАРС electronic journal system is designed to automate the process of maintaining educational documentation in schools. It allows teachers, students, parents, and administrators to track academic performance, attendance, homework, and other important aspects of the learning process.
-
-## Data Structure
+## Структура данных
 
 ### 1. Users
-The system supports multiple types of users:
-- **Teacher** — has access to journals, homework, grades, and schedules.
-- **Students** — can view their grades, attendance, and assignments.
-- **Parents** — can monitor their children's performance.
-- **Administrators** — manage the system and users.
+Система поддерживает несколько типов пользователей:
+- **Teacher** — имеет доступ к журналам, домашним заданиям, оценкам и расписаниям.
+- **Pupils** — могут просматривать свои оценки, посещаемость и задания.
+- **Parents** — могут контролировать успеваемость своих детей.
+- **Administrators** — управлять системой и пользователями.
 
-### 2. Database Tables
+### 2. Таблицы базы данных
 
 #### 2.1. `user` Table (Users)
-Stores information about the system users:
-- `id`: User identifier.
-- `first_name`: First name.
-- `last_name`: Last name.
-- `gender`: Gender.
-- `birth_date`: Date of birth.
+Сохраняет информацию о пользователях системы:
+- `id`: Идентификатор пользователя.
+- `first_name`: Имя.
+- `last_name`: Фамилия.
+- `gender`: Пол.
+- `birth_date`: Дата рождения.
 - `email`: Email address.
-- `password`: Password.
-- `role_id`: User role (link to the `role` table).
+- `password`: Пароль.
+- `role_id`: Роль пользователя (ссылка на таблицу `role`).
 
 #### 2.2. `role` Table (Roles)
-Contains user roles:
-- `id`: Role identifier.
-- `name`: Role name (e.g., "Teacher", "Student", "Parent", "Administrator").
+Содержит роли пользователей:
+- `id`: Идентификатор роли.
+- `name`: Название роли (например, «Учитель», «Ученик», «Родитель», «Администратор»).
 
 #### 2.3. `subject` Table (Subjects)
-Contains information about subjects:
-- `id`: Subject identifier.
-- `title`: Subject name.
-- `description`: Subject description.
-- `teacher_id`: Teacher identifier (link to the `user` table).
-- `credit_hours`: Number of academic hours.
+Содержит информацию по темам:
+- `id`: Идентификатор предмета.
+- `title`: Название предмета.
+- `description`: Описание предмета.
+- `teacher_id`: Идентификатор учителя (ссылка на таблицу `user`).
+- `credit_hours`: Количество академических часов.
 
 #### 2.4. `lesson` Table (Lessons)
-Contains information about lessons:
-- `id`: Lesson identifier.
-- `subject_id`: Subject (link to the `subject` table).
-- `class_id`: Class (link to the `schoolClass` table).
-- `quarter_id`: Quarter (link to the `quarter` table).
-- `date`: Lesson date.
+Содержит информацию об уроках:
+- `id`: Идентификатор урока.
+- `subject_id`: Тема (ссылка на таблицу `subject`).
+- `class_id`: Класс (ссылка на таблицу `schoolClass`).
+- `quarter_id`: Квартал (ссылка на таблицу `квартал`).
+- `date`: Дата урока.
 
 #### 2.5. `attendance` Table (Attendance)
-Tracks student attendance for lessons:
-- `id`: Record identifier.
-- `lesson_id`: Lesson (link to the `lesson` table).
-- `student_id`: Student (link to the `user` table).
-- `status`: Attendance status (e.g., "Present", "Absent").
+Отслеживает посещаемость занятий учениками:
+- `id`: Идентификатор записи.
+- `lesson_id`: Урок (ссылка на таблицу `урок`).
+- `student_id`: Студент (ссылка на таблицу `user`).
+- `status`: Статус присутствия (например, «Присутствует», «Отсутствует»).
 
 #### 2.6. `grade` Table (Grades)
-Contains student grades:
-- `id`: Record identifier.
-- `lesson_id`: Lesson (link to the `lesson` table).
-- `student_id`: Student (link to the `user` table).
-- `grade`: Grade.
+Содержит оценки учащихся:
+- `id`: Идентификатор записи.
+- `lesson_id`: Урок (ссылка на таблицу `урок`).
+- `student_id`: Студент (ссылка на таблицу `user`).
+- `grade`: Оценка.
 
 #### 2.7. `homework` Table (Homework)
-Contains information about homework assignments:
-- `id`: Assignment identifier.
-- `subject_id`: Subject (link to the `subject` table).
-- `teacher_id`: Teacher (link to the `user` table).
-- `description`: Assignment description.
-- `due_date`: Due date.
+Содержит информацию о домашних заданиях:
+- `id`: Идентификатор назначения.
+- `subject_id`: Тема (ссылка на таблицу `subject`).
+- `teacher_id`: Учитель (ссылка на таблицу `user`).
+- `description`: Описание задания.
+- `due_date`: Срок оплаты.
 
 ### 3. REST API
 
-#### 3.1. Authentication and Authorization
-JWT tokens are used for system access.
+#### 3.1. Аутентификация и авторизация
+Для доступа к системе используются токены JWT.
 
-##### 3.1.1. User Registration
+##### 3.1.1. Регистрация пользователя
 **POST** `/api/auth/register`
 - **Request Parameters**:
-  - `first_name`: User's first name.
-  - `last_name`: User's last name.
-  - `email`: User's email address.
-  - `password`: User's password.
+  - `first_name`: Имя пользователя.
+  - `last_name`: Фамилия пользователя.
+  - `email`: Адрес электронной почты пользователя.
+  - `password`: Пароль пользователя.
 - **Response**:
-  - Status 200: Successful registration.
+  - Статус 200: Успешная регистрация.
 
 ##### 3.1.2. User Login
 **POST** `/api/auth/login`
 - **Request Parameters**:
-  - `email`: User's email address.
-  - `password`: User's password.
+  - `email`: Адрес электронной почты пользователя.
+  - `password`: Пароль пользователя.
 - **Response**:
-  - Status 200: Returns JWT token.
+  - Статус 200: Возвращает токен JWT.
 
-#### 3.2. Journal Management
+#### 3.2. Управление журналом
 
-##### 3.2.1. Get All Lessons for a Class
+##### 3.2.1. Получить все уроки для класса
 **GET** `/api/classes/{classId}/lessons`
 - **Response**:
-  - Status 200: List of lessons for the specified class.
+  - Статус 200: Список уроков для указанного класса.
 
-##### 3.2.2. Add Grade
+##### 3.2.2. Добавить оценку
 **POST** `/api/grades`
 - **Request Parameters**:
-  - `lesson_id`: Lesson identifier.
-  - `student_id`: Student identifier.
-  - `grade`: Grade.
+  - `lesson_id`: Идентификатор урока.
+  - `student_id`: Идентификатор студента.
+  - `grade`: Оценка.
 
-#### 3.3. Attendance Management
+#### 3.3. Управление посещаемостью
 
 ##### 3.3.1. Get Attendance for a Lesson
 **GET** `/api/attendance/{lessonId}`
 - **Response**:
-  - Status 200: List of attendance for the specified lesson.
+  - Статус 200: Список посещающих указанный урок.
 
 ##### 3.3.2. Add Attendance
 **POST** `/api/attendance`
 - **Request Parameters**:
-  - `lesson_id`: Lesson identifier.
-  - `student_id`: Student identifier.
-  - `status`: Attendance status ("Present", "Absent").
+  - `lesson_id`: Идентификатор урока.
+  - `student_id`: Идентификатор студента.
+  - `status`: Статус присутствия («Присутствует», «Отсутствует»).
 
-## Dependencies and Technologies
-- **Spring Boot** — the core technology for building the REST API.
-- **JWT** — for authentication and authorization.
-- **Liquibase** — for database migrations.
-- **PostgreSQL** — database.
+### Развертывание
+1. Создание файлов `Dockerfile` и `docker-compose.yml`.
+2. Сборка и запуск контейнеров локально для проверки: docker-compose up --build
+3. Создание нового Web Service на render.com:
+- Указание ссылки на репозиторий с проектом.
+- Настройка переменных окружения (параметры подключения к базе данных).
+- После завершения деплоя приложение будет доступно по сгенерированному публичному адресу.
 
-## Deployment
-1. Clone the repository.
-2. Configure database connection settings in `application.properties`.
-3. Run the application using the following commands:
-   - `./gradlew bootRun` (for Linux/macOS)
-   - `gradlew bootRun` (for Windows)
+## Роли и полномочия
+Приложение поддерживает роли пользователей, каждая из которых имеет определенные привилегии:
+- **Administrator** — управляет всеми аспектами приложения.
+- **Teacher** — управляет предметами, уроками, оценками и домашними заданиями.
+- **Pupil** — могут просматривать свои оценки, посещаемость и задания.
+- **Parent** — могут отслеживать успеваемость своих детей.
 
-## Roles and Authorization
-The system supports user roles, each with specific privileges:
-- **Administrator** — manages all aspects of the system.
-- **Teacher** — manages subjects, lessons, grades, and homework assignments.
-- **Student** — can view their grades, attendance, and assignments.
-- **Parent** — can track their children's performance.
-
-## Conclusion
-The БАРС electronic journal provides an efficient interface for managing educational documentation in schools, offering various levels of access for system users.
+## Заключение
+Электронный журнал представляет собой эффективный интерфейс для управления учебной документацией в школах, предлагая различные уровни доступа для пользователей системы.
